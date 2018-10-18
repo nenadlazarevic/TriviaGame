@@ -7,11 +7,11 @@
   }
 
   body {
-    background-color: rgb(226, 208, 43)
+    background-color: goldenrod
   }
   .jumbotron {
 
- background-color: rgb(226, 208, 43)
+ background-color: goldenrod
   }
 
   .answer {
@@ -19,3 +19,16 @@
     color: rgb(17, 63, 104);
     background-color: rgba(255, 255, 255, 0.993)
   }
+
+  img {
+   width: 80%;
+   height: 80%;
+  }
+
+ 
+    
+    
+
+    h1 {
+    
+    }

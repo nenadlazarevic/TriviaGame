@@ -1,12 +1,13 @@
-var questions = ["What Is the Capital Of Belgium?", "q2?", "q3?", "q4?"]
-var answers = [["Antwerp", "Brussels", "Bruges", "Ghent"], ["q2A", "q2B", "q2C", "q2D"], ["q3A", "q3B", "q3C", "q3D"], ["q4A", "q4B", "q4C", "q4D"]]
-var corectAnswer = ["B. Brussels", "C. q2C", "A. q3A", "D. q4D"]
+var questions = ["What Is the Capital Of Belgium?", "What Is the Capital Of Italy?", "What Is the Capital Of Germany?", "What Is the Capital Of Finland?", "What Is the Capital Of Serbia?", "What Is the Capital Of Poland", "What Is the Capital Of Estonia"]
+var answers = [["Antwerp", "Brussels", "Bruges", "Ghent"], ["Milan", "Vatican", "Rome", "Florence"], ["Berlin", "Hamburg", "Frankfurt", "Stuttgart"], ["Tampere", "Turku", "Oulu", "Helsinki"], ["Vienna", "Zagreb", "Sarajevo", "Belgrade"], ["Krakow", "Warsaw", "Gdansk", "Katowice"], ["Narva", "Tartu", "Tallinn", "Elva"]]
+var corectAnswer = ["B. Brussels", "C. Rome", "A. Berlin", "D. Helsinki", "D. Belgrade", "B. Warsaw", "C. Tallinn"]
 var count = 0
 var counter = 30
 var timer;
-var images = ["<img class='center-block img-right' src='assets/images/Brussels.jpg'></img>"]
+var images = ["<img class='center-block img-right' src='assets/images/Brussels.jpg'></img>", "<img class='center-block img-right' src='assets/images/Rome.jpg'></img>", "<img class='center-block img-right' src='assets/images/Berlin.jpg'></img>", "<img class='center-block img-right' src='assets/images/Helsinki.jpg'></img>","<img class='center-block img-right' src='assets/images/Belgrade.jpg'></img>", "<img class='center-block img-right' src='assets/images/Warsaw.jpg'></img>", "<img class='center-block img-right' src='assets/images/Tallinn.jpg'></img>"]
 var correct = 0
 var incorrect = 0
+
 
 
 function startsScreen() {
@@ -74,12 +75,13 @@ function loose() {
 
 }
 function timeOut() {
-    gameHTML = "<p class='text-center'>Timeout! "+ corectAnswer[count] + "</p>" + images[count];
+    incorrect++
+    gameHTML = "<p class='text-center'>Timeout!</p><p class='text-center'> The Correct Answer is</p><p class='text-center'>" + corectAnswer[count] + "</p>" + images[count];
     $("#main").html(gameHTML)
     setTimeout(between, 4000);
 }
 function between() {
-    if ( count < 4) {
+    if ( count < 6) {
     count++
     counter = 30;
     timerWrapper();
@@ -93,7 +95,7 @@ function between() {
 }
 
 function end(){
-    gameHTML = "<p class='text-center'>you have: " + correct + "correct answers</p>" + "<p class='text-center'>you have" + incorrect; 
+    gameHTML = "<p class='text-center'>Correct Answers: " + correct + "</p>" + "<p class='text-center'>Wrong Answers" + incorrect; 
     $("#main").html(gameHTML);
     
 
