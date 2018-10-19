@@ -25,10 +25,23 @@
    height: 80%;
   }
 
- 
-    
+ #wrong {
+   color:red;
+   font-weight: bolder;
+   font-size: 200%; 
+   
+ }
+  #endWrong {
+    font-weight: bolder;
+    font-size: 400%; 
+    color: red
+  }
     
 
-    h1 {
+  #end {
+
+    font-weight: bolder;
+   font-size: 400%; 
+   color: beige
     
     }

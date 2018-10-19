@@ -69,7 +69,7 @@ function win(){
 }
 
 function loose() {
-    gameHTML = "<p class='text-center'>Wrong! The correct answer is: "+ corectAnswer[count] + "</p>" + images[count];
+    gameHTML = "<p id=wrong class='text-center'>Wrong!</p><p class='text-center'> The correct answer is: "+ corectAnswer[count] + "</p>" + images[count];
     $("#main").html(gameHTML)
     setTimeout(between, 4000);
 
@@ -95,7 +95,7 @@ function between() {
 }
 
 function end(){
-    gameHTML = "<p class='text-center'>Correct Answers: " + correct + "</p>" + "<p class='text-center'>Wrong Answers" + incorrect; 
+    gameHTML = "<p id=end class='text-center'>Correct Answers: " + correct + "</p>" + "<p id=endWrong class='text-center'>Wrong Answers: " + incorrect; 
     $("#main").html(gameHTML);
     
 
